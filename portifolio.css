@@ -1,182 +1,304 @@
-/* Reset basic styles */
+/* --- 1. Variables & Global Reset --- */
+:root {
+    --bg-main: #1a1a1a;
+    --bg-header: #222831;
+    --bg-card: #222831;
+    --bg-input: #393e46;
+    --text-main: #eeeeee;
+    --text-accent: #00adb5;
+    --nav-bg: #222831;
+    --foot-bg: #111111;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+body.alt-body-theme {
+    --bg-main: #ffffff;
+    --bg-header: #f4f4f4;
+    --bg-card: #ffffff;
+    --bg-input: #f9f9f9;
+    --text-main: #222831;
+    --nav-bg: #ffffff;
+    --foot-bg: #f4f4f4;
+    --border-color: #dddddd;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
-body {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    line-height: 1.6;
+html {
     scroll-behavior: smooth;
 }
 
-/* Navigation */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    transition: 0.5s ease;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* --- 2. Navigation & Mobile Menu --- */
 #navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 10%;
-    background: #111;
-    position: sticky;
+    padding: 0.8rem 5%;
+    background: var(--nav-bg);
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.5s ease;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-accent);
 }
 
 #navbar ul {
     display: flex;
+    align-items: center;
     list-style: none;
+    gap: 25px;
 }
 
-#navbar ul li {
-    margin-left: 20px;
-}
-
-#navbar a {
-    color: white;
+#navbar ul li a {
+    color: var(--text-main);
     text-decoration: none;
-    transition: color 0.3s;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-#navbar a:hover {
-    color: #00adb5;
+#navbar ul li a:hover {
+    color: var(--text-accent);
 }
 
-/* Hero Section */
+/* Hamburger Icon */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-main);
+    border-radius: 2px;
+}
+
+/* --- 3. Toggle Switch --- */
+.toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 10px;
+    background: rgba(128, 128, 128, 0.1);
+    border-radius: 20px;
+}
+
+.switch {
+    position: relative;
+    width: 32px;
+    height: 18px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #555;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--text-accent);
+}
+
+input:checked+.slider:before {
+    transform: translateX(14px);
+}
+
+/* --- 4. Header & Hero --- */
 header {
-    height: 80vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: var(--bg-header);
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1500x800');
-    background-size: cover;
-}
-
-.highlight {
-    color: #00adb5;
-}
-
-#cta-btn {
-    margin-top: 20px;
-    padding: 10px 25px;
-    background-color: #00adb5;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-/* Profile Image Styling */
-.profile-container {
-    margin-bottom: 20px;
+    padding: 20px;
 }
 
 .profile-img {
-    width: 180px;      /* Set a fixed width */
-    height: 180px;     /* Set a fixed height (same as width for a circle) */
-    border-radius: 50%; /* This makes the image a perfect circle */
-    object-fit: cover; /* Ensures the image doesn't stretch or squash */
-    border: 4px solid #00adb5; /* Adds a nice border in your highlight color */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid var(--text-accent);
+    margin-bottom: 20px;
 }
 
-/* Make image slightly smaller on mobile */
-@media (max-width: 480px) {
-    .profile-img {
-        width: 140px;
-        height: 140px;
-    }
-}
-/* Container to handle the typing width */
-.typing-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
+.hero-text-box {
+    background: rgba(128, 128, 128, 0.05);
+    backdrop-filter: blur(8px);
+    padding: 15px 30px;
+    border-radius: 12px;
+    margin: 20px 0;
 }
 
-.typing-text {
-    display: inline-block;
-    overflow: hidden; /* Ensures the text is hidden until typed */
-    border-right: 3px solid #00adb5; /* The cursor */
-    white-space: nowrap; /* Keeps the text on one line */
-    font-size: 1.2rem;
-    width: 0; /* Starts at zero width */
-    animation: 
-        typing 3.5s steps(40, end) forwards,
-        blink-caret 0.75s step-end infinite;
+#typewriter-text {
+    font-weight: bold;
+    color: var(--text-accent);
 }
 
-/* The typing effect: expands width from 0 to 100% */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-/* The cursor blinking effect */
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #00adb5 }
-}
-
-/* Adjust for mobile: allow wrapping or smaller font */
+/* --- 5. Responsiveness (The "Catch" Logic) --- */
 @media (max-width: 768px) {
-    .typing-text {
-        font-size: 0.9rem;
-        white-space: normal; /* Allows wrapping on small screens */
-        width: auto; 
-        border-right: none; /* Usually better to disable typing animation on mobile for readability */
-        animation: none;
+    .menu-icon {
+        display: flex;
+    }
+
+    #navbar ul {
+        position: fixed;
+        right: -100%;
+        top: 60px;
+        flex-direction: column;
+        background: var(--nav-bg);
+        width: 80%;
+        height: 100vh;
+        padding-top: 50px;
+        transition: 0.4s ease;
+        box-shadow: -10px 0 20px var(--shadow);
+    }
+
+    #navbar ul.active {
+        right: 0;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
     }
 }
 
-/* Sections */
+/* Utility Classes */
 section {
-    padding: 80px 10%;
-}
-
-h2 {
+    padding: 100px 10%;
     text-align: center;
-    margin-bottom: 40px;
-    font-size: 2.5rem;
 }
 
-/* Project Grid */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.submit-btn,
+#cta-btn {
+    padding: 12px 30px;
+    background: var(--text-accent);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* --- 6. Sections & Typography --- */
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    width: 60%;
+    height: 4px;
+    background: var(--text-accent);
+    position: absolute;
+    bottom: -15px;
+    left: 20%;
+    border-radius: 10px;
+}
+
+/* --- 7. Projects Grid --- */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
 }
 
 .project-card {
-    background: #222831;
-    padding: 20px;
-    border-radius: 10px;
-    border-bottom: 4px solid #00adb5;
-    transition: transform 0.3s;
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    border-bottom: 6px solid var(--text-accent);
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: left;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #111;
+.project-card h3 {
+    color: var(--text-accent);
+    margin-bottom: 15px;
 }
-/* Contact Section Styles */
+
+/* --- 8. Contact Form --- */
 .contact-container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
-    background: #222831;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow);
+    border: 1px solid var(--border-color);
 }
 
 .form-group {
@@ -186,115 +308,46 @@ footer {
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #00adb5;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
-.form-group input, 
-.form-group textarea {
+input,
+textarea {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #393e46;
-    background: #1a1a1a;
-    color: white;
-    border-radius: 5px;
+    padding: 15px;
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    border-radius: 10px;
     font-size: 1rem;
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--text-accent);
     outline: none;
-    transition: border-color 0.3s;
+    box-shadow: 0 0 10px rgba(0, 173, 181, 0.2);
 }
 
-/* Focus effect when clicking into a field */
-.form-group input:focus, 
-.form-group textarea:focus {
-    border-color: #00adb5;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: #00adb5;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.submit-btn:hover {
-    background-color: #008c94;
-    transform: scale(1.02);
-}
-/* Initial state: Hidden and slightly lower */
+/* --- 9. Animations & Footer --- */
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+    transform: translateY(40px);
+    transition: 1s all ease;
 }
 
-/* Active state: Visible and in original position */
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
-/* --- Comprehensive Responsive Design --- */
 
-/* Tablets and small laptops (under 1024px) */
-@media (max-width: 1024px) {
-    section {
-        padding: 60px 8%;
-    }
-}
-
-/* Mobile Phones (under 768px) */
-@media (max-width: 768px) {
-    #navbar {
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    #navbar ul {
-        padding: 0;
-        margin-top: 10px;
-        flex-wrap: wrap; /* Allows links to wrap if they are too wide */
-        justify-content: center;
-    }
-
-    #navbar ul li {
-        margin: 5px 10px;
-    }
-
-    header h1 {
-        font-size: 2.2rem;
-    }
-
-    .project-grid {
-        grid-template-columns: 1fr; /* Stack cards vertically */
-    }
-}
-
-/* Very Small Devices (under 480px) */
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    header p {
-        font-size: 0.9rem;
-        padding: 0 10px;
-    }
-
-    #cta-btn {
-        width: 80%; /* Make button easier to tap on small screens */
-    }
-
-    .contact-container {
-        padding: 15px;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
+footer {
+    padding: 40px;
+  background-color: var(--foot-bg); /* Use the variable! */
+    transition: background-color 0.5s ease;
+    color:#bbb;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
 }

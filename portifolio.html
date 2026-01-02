@@ -12,28 +12,49 @@
 
     <nav id="navbar">
         <div class="logo">DevPortfolio</div>
+        <div class="menu-icon" id="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li class="nav-toggle">
+                <div class="toggle-wrapper">
+                    <span>Style</span>
+                    <label class="switch">
+                        <input type="checkbox" id="profile-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </li>
         </ul>
     </nav>
 
     <header id="home">
-        <div class="profile-container">
-            <img src="profile.jpg" alt="Your Name Profile Photo" class="profile-img">
+        <div class="profile-container"> <img src="portifolio.png" alt="Profile Photo" class="profile-img"
+                id="profile-pic">
         </div>
-        <h1>Hi, I'm <span class="highlight">[Your Name]</span></h1>
-        <p class="typing-container">
-            <span class="typing-text">A Full-Stack Web Developer passionate about building clean applications.</span>
-        </p>
+        <h1>Hi, I'm <span class="highlight">[Name]</span></h1>
+        <div class="hero-text-box">
+            <p class="typing-container">
+                <span id="typewriter-text"></span><span class="cursor">|</span>
+            </p>
+        </div>
         <button id="cta-btn">View My Work</button>
     </header>
 
     <section id="about" class="reveal">
         <h2>About Me</h2>
-        <p>I specialize in modern web technologies and love solving complex problems through code.</p>
+        <p>
+            I am a <strong>Full-Stack Developer</strong> with a passion 
+            for building scalable web applications. I specialize in turning
+             complex problems into simple, beautiful, and intuitive designs. My goal is to write clean, efficient code that provides a seamless user experience. When I'm not coding, I’m usually researching the latest web
+             trends or optimizing performance for my existing projects."
+        </p>
     </section>
 
     <section id="projects" class="reveal">
