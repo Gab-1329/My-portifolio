@@ -21,22 +21,27 @@
     </nav>
 
     <header id="home">
-        <h1>Hi, I'm <span class="highlight">[name]</span></h1>
-        <p>A Full-Stack Web Developer passionate about building clean applications.</p>
+        <div class="profile-container">
+            <img src="profile.jpg" alt="Your Name Profile Photo" class="profile-img">
+        </div>
+        <h1>Hi, I'm <span class="highlight">[Your Name]</span></h1>
+        <p class="typing-container">
+            <span class="typing-text">A Full-Stack Web Developer passionate about building clean applications.</span>
+        </p>
         <button id="cta-btn">View My Work</button>
     </header>
 
-    <section id="about">
+    <section id="about" class="reveal">
         <h2>About Me</h2>
         <p>I specialize in modern web technologies and love solving complex problems through code.</p>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="reveal">
         <h2>My Projects</h2>
         <div id="project-container" class="project-grid">
         </div>
     </section>
-    <section id="contact">
+    <section id="contact" class="reveal">
         <h2>Contact Me</h2>
         <div class="contact-container">
             <form id="contact-form">

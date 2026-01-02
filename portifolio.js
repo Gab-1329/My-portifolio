@@ -83,4 +83,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Call the function inside your DOMContentLoaded listener
     displayProjects();
+    // 6. Scroll Reveal Animation
+function revealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // If the element is visible in the viewport
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when 10% of the element is visible
+    });
+
+    reveals.forEach(reveal => {
+        observer.observe(reveal);
+    });
+}
+
+// Call this inside your DOMContentLoaded listener
+revealOnScroll();
 });

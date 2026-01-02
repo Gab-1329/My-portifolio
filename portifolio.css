@@ -70,6 +70,69 @@ header {
     border-radius: 5px;
     font-size: 1rem;
 }
+/* Profile Image Styling */
+.profile-container {
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 180px;      /* Set a fixed width */
+    height: 180px;     /* Set a fixed height (same as width for a circle) */
+    border-radius: 50%; /* This makes the image a perfect circle */
+    object-fit: cover; /* Ensures the image doesn't stretch or squash */
+    border: 4px solid #00adb5; /* Adds a nice border in your highlight color */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Make image slightly smaller on mobile */
+@media (max-width: 480px) {
+    .profile-img {
+        width: 140px;
+        height: 140px;
+    }
+}
+/* Container to handle the typing width */
+.typing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.typing-text {
+    display: inline-block;
+    overflow: hidden; /* Ensures the text is hidden until typed */
+    border-right: 3px solid #00adb5; /* The cursor */
+    white-space: nowrap; /* Keeps the text on one line */
+    font-size: 1.2rem;
+    width: 0; /* Starts at zero width */
+    animation: 
+        typing 3.5s steps(40, end) forwards,
+        blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect: expands width from 0 to 100% */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* The cursor blinking effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #00adb5 }
+}
+
+/* Adjust for mobile: allow wrapping or smaller font */
+@media (max-width: 768px) {
+    .typing-text {
+        font-size: 0.9rem;
+        white-space: normal; /* Allows wrapping on small screens */
+        width: auto; 
+        border-right: none; /* Usually better to disable typing animation on mobile for readability */
+        animation: none;
+    }
+}
 
 /* Sections */
 section {
@@ -163,6 +226,18 @@ footer {
 .submit-btn:hover {
     background-color: #008c94;
     transform: scale(1.02);
+}
+/* Initial state: Hidden and slightly lower */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* Active state: Visible and in original position */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 /* --- Comprehensive Responsive Design --- */
 
