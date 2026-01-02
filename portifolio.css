@@ -106,3 +106,120 @@ footer {
     padding: 20px;
     background: #111;
 }
+/* Contact Section Styles */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #222831;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #00adb5;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #393e46;
+    background: #1a1a1a;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+/* Focus effect when clicking into a field */
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #00adb5;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #00adb5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #008c94;
+    transform: scale(1.02);
+}
+/* --- Comprehensive Responsive Design --- */
+
+/* Tablets and small laptops (under 1024px) */
+@media (max-width: 1024px) {
+    section {
+        padding: 60px 8%;
+    }
+}
+
+/* Mobile Phones (under 768px) */
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    #navbar ul {
+        padding: 0;
+        margin-top: 10px;
+        flex-wrap: wrap; /* Allows links to wrap if they are too wide */
+        justify-content: center;
+    }
+
+    #navbar ul li {
+        margin: 5px 10px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically */
+    }
+}
+
+/* Very Small Devices (under 480px) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+
+    #cta-btn {
+        width: 80%; /* Make button easier to tap on small screens */
+    }
+
+    .contact-container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}
