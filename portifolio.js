@@ -199,7 +199,7 @@ function typeWriterEffect() {
         textElement.textContent += fullText.charAt(index);
         index++;
         // Wait 50ms before the next letter
-        setTimeout(typeWriterEffect, 50);
+        setTimeout(typeWriterEffect, 100);
     } else {
         // The sentence is finished. Wait 2 seconds, then reset.
         setTimeout(() => {
