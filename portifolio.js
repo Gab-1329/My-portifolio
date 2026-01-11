@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('profile-toggle');
     themeToggle.addEventListener('change', () => {
         document.body.classList.toggle('alt-body-theme');
+        const wrapper = document.querySelector('.toggle-wrapper');
+        wrapper.style.transform = "scale(1.05)";
+        setTimeout(() => wrapper.style.transform = "scale(1)", 200);
     });
 
     // 3. Typewriter Effect
