@@ -8,6 +8,7 @@
     --text-accent: #00adb5;
     --nav-bg: #222831;
     --foot-bg: #111111;
+    --foot-text: #888888;
     --border-color: rgba(255, 255, 255, 0.1);
     --shadow: rgba(0, 0, 0, 0.5);
 }
@@ -20,6 +21,7 @@ body.alt-body-theme {
     --text-main: #222831;
     --nav-bg: #ffffff;
     --foot-bg: #f4f4f4;
+    --foot-text: #555555;
     --border-color: #dddddd;
     --shadow: rgba(0, 0, 0, 0.1);
 }
@@ -324,11 +326,14 @@ textarea:focus {
 }
 /* Ensure Footer is always visible and black */
 footer {
-    padding: 60px 20px;
-    background-color: #111111 !important; /* Forced Black */
-    color: #ffffff;
+    padding: 40px;
+    /* Change this line to use the variable */
+    background-color: var(--foot-bg); 
+    color: var(--foot-text);
     text-align: center;
     border-top: 1px solid var(--border-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
+  
 }
 
 footer p {
