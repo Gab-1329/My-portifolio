@@ -342,11 +342,29 @@ textarea:focus {
     opacity: 1;
     transform: translateY(0);
 }
-
+/* Ensure Footer is always visible and black */
 footer {
-    padding: 40px;
-  background-color: var(--foot-bg); /* Use the variable! */
-    transition: background-color 0.5s ease;
+    padding: 60px 20px;
+    background-color: #111111 !important; /* Forced Black */
+    color: #ffffff;
     text-align: center;
     border-top: 1px solid var(--border-color);
+}
+
+footer p {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* About Me Styling */
+#about p {
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+#about strong {
+    color: var(--text-accent);
 }
