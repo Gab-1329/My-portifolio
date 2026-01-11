@@ -337,7 +337,7 @@ footer {
 }
 
 footer p {
-    color: #888;
+    color: var(--foot-text);
     font-size: 0.9rem;
 }
 
