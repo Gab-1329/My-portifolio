@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. About Me & Project Data Update
     const aboutParagraph = document.querySelector('#about p');
     if(aboutParagraph) {
-        aboutParagraph.innerHTML = `I am a dedicated <strong>Software Engineer</strong> and a proud graduate of <strong>Arba Minch University</strong>. 
+        aboutParagraph.innerHTML = `I am a dedicated <strong>Software Engineer</strong> and I am currently studying at  <strong>Arba Minch University</strong>. 
         With a strong foundation in algorithmic problem-solving and modern web technologies, I strive to bridge the gap between complex backend logic 
         and intuitive user interfaces. I am passionate about creating software that is not only functional but also contributes to solving real-world challenges through clean, maintainable code.`;
     }
