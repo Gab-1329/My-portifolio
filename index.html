@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,13 @@
     <link rel="stylesheet" href="portifolio.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
 
     <nav id="navbar">
-        <div class="logo">DevPortfolio</div>
+        <a href="#home" class="logo">
+            <img src="logo.png" alt="Addisu Tameru Logo" id="nav-logo">
+        </a>
         <div class="menu-icon" id="menu-icon">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -23,20 +27,20 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
             <li class="nav-toggle">
-               <div class="toggle-wrapper">
-                   <i class="fas fa-sun" style="color: #f1c40f;"></i> 
-                   <label class="switch">
-                   <input type="checkbox" id="profile-toggle">
-                   <span class="slider round"></span>
-                   </label>
-                   <i class="fas fa-moon" style="color: #f1c40f;"></i> 
-               </div>
+                <div class="toggle-wrapper">
+                    <i class="fas fa-sun" style="color: #f1c40f;"></i>
+                    <label class="switch">
+                        <input type="checkbox" id="profile-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <i class="fas fa-moon" style="color: #f1c40f;"></i>
+                </div>
             </li>
         </ul>
     </nav>
 
     <header id="home">
-        <div class="profile-container"> 
+        <div class="profile-container">
             <img src="profile.png" alt="Profile Photo" class="profile-img" id="profile-pic">
         </div>
         <h1>Hi, I'm <span class="highlight">Addisu Tameru</span></h1>
@@ -51,7 +55,7 @@
     <section id="about" class="reveal">
         <h2>About Me</h2>
         <p id="about-text">
-            </p>
+        </p>
     </section>
 
     <section id="skills" class="reveal">
@@ -78,7 +82,7 @@
     <section id="projects" class="reveal">
         <h2>My Projects</h2>
         <div id="project-container" class="project-grid">
-            </div>
+        </div>
     </section>
 
     <section id="contact" class="reveal">
@@ -95,7 +99,8 @@
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required></textarea>
+                    <textarea id="message" name="message" rows="5" placeholder="How can I help you?"
+                        required></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
@@ -108,4 +113,5 @@
 
     <script src="portifolio.js"></script>
 </body>
+
 </html>
