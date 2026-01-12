@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Developer Portfolio</title>
+    <title>Addisu Tameru | Portfolio</title>
     <link rel="stylesheet" href="portifolio.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
 
     <nav id="navbar">
@@ -21,6 +19,7 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
             <li class="nav-toggle">
@@ -37,8 +36,8 @@
     </nav>
 
     <header id="home">
-        <div class="profile-container"> <img src="portifolio.png" alt="Profile Photo" class="profile-img"
-                id="profile-pic">
+        <div class="profile-container"> 
+            <img src="portifolio.png" alt="Profile Photo" class="profile-img" id="profile-pic">
         </div>
         <h1>Hi, I'm <span class="highlight">Addisu Tameru</span></h1>
         <div class="hero-text-box">
@@ -51,19 +50,37 @@
 
     <section id="about" class="reveal">
         <h2>About Me</h2>
-        <p>
-            I am a <strong>Full-Stack Developer</strong> with a passion 
-            for building scalable web applications. I specialize in turning
-             complex problems into simple, beautiful, and intuitive designs. My goal is to write clean, efficient code that provides a seamless user experience. When I'm not coding, I’m usually researching the latest web
-             trends or optimizing performance for my existing projects."
-        </p>
+        <p id="about-text">
+            </p>
+    </section>
+
+    <section id="skills" class="reveal">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fab fa-html5"></i>
+                <h3>Frontend</h3>
+                <p>HTML5, CSS3, JavaScript (ES6+)</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-node-js"></i>
+                <h3>Backend</h3>
+                <p>PHP & Node</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-database"></i>
+                <h3>Databases</h3>
+                <p>MySQL & MongoDB</p>
+            </div>
+        </div>
     </section>
 
     <section id="projects" class="reveal">
         <h2>My Projects</h2>
         <div id="project-container" class="project-grid">
-        </div>
+            </div>
     </section>
+
     <section id="contact" class="reveal">
         <h2>Contact Me</h2>
         <div class="contact-container">
@@ -78,8 +95,7 @@
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="How can I help you?"
-                        required></textarea>
+                    <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
@@ -87,10 +103,9 @@
     </section>
 
     <footer>
-        <p>&copy; 2023 name. All rights reserved.</p>
+        <p>&copy; 2023 Addisu Tameru. All rights reserved.</p>
     </footer>
 
     <script src="portifolio.js"></script>
 </body>
-
 </html>
